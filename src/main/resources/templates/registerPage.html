@@ -8,25 +8,23 @@
 <form action="/register" method="post" th:object="${emptyObject}">
 
 
-    <input th:field="*{firstName}" type="text" placeholder="imię"></br>
-    <input th:field="*{surname}" type="text" placeholder="nazwisko"></br>
-    <input th:field="*{email}" type="text" placeholder="email"></br>
-    <input th:field="*{password}" type="text" placeholder="hasło"></br>
-    <input th:field="*{city}" type="text" placeholder="miasto"></br>
+    <input th:field="*{firstName}" type="text" placeholder="imię"><br>
+    <input th:field="*{surname}" type="text" placeholder="nazwisko"><br>
+    <input th:field="*{email}" type="text" placeholder="email"><br>
+    <input th:field="*{password}" type="text" placeholder="hasło"><br>
+    <input th:field="*{phoneNumber}" type="text" placeholder="numer telefonu"><br>
+    <input th:field="*{birthDate}" type="text" placeholder="data urodzenia"><br>
+    <input th:field="*{pesel}" type="text" placeholder="pesel"><br>
+    <input th:field="*{street}" type="text" placeholder="ulica"><br>
+    <input th:field="*{city}" type="text" placeholder="miasto"><br>
+    <input th:field="*{zipCode}" type="text" placeholder="kod pocztowy"><br>
     <select th:field="*{country}">
-        <option value="" Wybierz>
-        <option>
+        <option value=""> Wybierz </option>
         <option th:each="c : ${countries}"
                 th:text="${c.getPolishName()}"
-                th:text="${c.getSymbol()}">
+                th:value="${c.getSymbol()}">
         </option>
-    </select></br>
-    <input th:field="*{street}" type="text" placeholder="street"><br>
-    <input th:field="*{birthDate}" type="text" placeholder="birthDate"><br>
-    <input th:field="*{pesel}" type="text" placeholder="pesel"><br>
-    <input th:field="*{email}" type="text" placeholder="email"><br>
-    <input th:field="*{password}" type="text" placeholder="password"><br>
-    <input th:field="*{phoneNumber}" type="text" placeholder="phoneNumber"><br>
+    </select><br>
 
     <button>Utwórz konto</button>
 

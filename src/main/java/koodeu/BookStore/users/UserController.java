@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class UserController {
 
-    private UserService userService;
+    private final UserService userService;
 
     @Autowired
     public UserController(UserService userService) {
@@ -19,14 +19,14 @@ public class UserController {
     }
 
 
-    @GetMapping(path = "/register")
+    @GetMapping("/register")
     public String displayForm(Model model) {
         model.addAttribute("countries", Countries.values());
         model.addAttribute("emptyObject", new UserRegistrationDto());
         return "registerPage";
     }
 
-    @PostMapping(path = "/register")
+    @PostMapping("/register")
     public String register(@ModelAttribute UserRegistrationDto dto, Model model) {
         UserListDto userListDto = userService.saveUser(dto);
         model.addAttribute("firstname", "Imię: " + userListDto.getFirstName());
