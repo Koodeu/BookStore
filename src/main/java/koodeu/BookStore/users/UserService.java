@@ -15,6 +15,9 @@ public class UserService {
     }
 
 
-    
-
+    public UserListDto saveUser(UserRegistrationDto dto) {
+        User user = User.fromDto(dto);
+        User saved = userRepository.save(user);
+        return saved.userListDto();
+    }
 }

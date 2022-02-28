@@ -18,8 +18,7 @@
         <option>
         <option th:each="c : ${countries}"
                 th:text="${c.getPolishName()}"
-                th:text="${c.getSymbol()}"
-
+                th:text="${c.getSymbol()}">
         </option>
     </select></br>
     <input th:field="*{street}" type="text" placeholder="street"><br>
