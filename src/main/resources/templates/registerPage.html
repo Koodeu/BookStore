@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookstore registration</title>
+</head>
+<body>
+<form action="/register" method="post" th:object="${emptyObject}">
+
+
+    <input th:field="*{firstName}" type="text" placeholder="imię"></br>
+    <input th:field="*{surname}" type="text" placeholder="nazwisko"></br>
+    <input th:field="*{email}" type="text" placeholder="email"></br>
+    <input th:field="*{password}" type="text" placeholder="hasło"></br>
+    <input th:field="*{city}" type="text" placeholder="miasto"></br>
+    <select th:field="*{country}">
+        <option value="" Wybierz>
+        <option>
+        <option th:each="c : ${countries}"
+                th:text="${c.getPolishName()}"
+                th:text="${c.getSymbol()}"
+
+        </option>
+    </select></br>
+    <input th:field="*{street}" type="text" placeholder="street"><br>
+    <input th:field="*{birthDate}" type="text" placeholder="birthDate"><br>
+    <input th:field="*{pesel}" type="text" placeholder="pesel"><br>
+    <input th:field="*{email}" type="text" placeholder="email"><br>
+    <input th:field="*{password}" type="text" placeholder="password"><br>
+    <input th:field="*{phoneNumber}" type="text" placeholder="phoneNumber"><br>
+
+    <button>Utwórz konto</button>
+
+    <p th:text="${txt}"></p>
+
+</form>
+
+</body>
+</html>
